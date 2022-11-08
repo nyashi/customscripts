@@ -3583,7 +3583,7 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         end
         if string.sub(CMDBAR.Text,1,5)==("tarcx") then
         local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
-        input.press(Enum.KeyCode.z)
+        input.press(Enum.KeyCode.Z)
         end
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
