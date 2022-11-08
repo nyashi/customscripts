@@ -157,7 +157,11 @@ function change()
     prefix = prefix
     speedfly = speedfly
 end
+local Mouse = lplayer:GetMouse()
 Players=game:GetService("Players")
+local MousePositionToVector2 = function()
+	return Vector2.new(Mouse.X, Mouse.Y)
+end
 function removeTableMatches(tab,matches)
 	local matchTable = {}
 	local resultTable = {}
@@ -261,8 +265,7 @@ function GetPlayer(list,speaker)
 	return foundUsers
 end
 
-local Mouse = lplayer:GetMouse()
- 
+
 spin = false
 followed = false
 traill = false
