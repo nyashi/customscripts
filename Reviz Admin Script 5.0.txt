@@ -3585,9 +3585,9 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         local virtualUser = game:GetService('VirtualUser')
         virtualUser:CaptureController()
 
-        virtualUser:SetKeyDown('0x7b')
+        virtualUser:SetKeyDown('0x2d')
         wait(2)
-        virtualUser:SetKeyUp('0x7b')
+        virtualUser:SetKeyUp('0x2d')
         end
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
