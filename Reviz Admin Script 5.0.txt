@@ -2734,7 +2734,9 @@ CMDBAR.FocusLost:connect(function(enterPressed)
             lplayer.Character.Torso.CFrame = CFrame.new(1000000,0,1000000)
         end
         if string.sub(CMDBAR.Text, 1, 8) == ("explorer") then
-            loadstring(game:GetObjects("rbxassetid://492005721")[1].Source)()
+            loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+
+
             game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Success!";
             Text = "DEX Explorer has loaded.";
