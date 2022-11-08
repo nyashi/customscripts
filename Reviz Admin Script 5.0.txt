@@ -3574,8 +3574,8 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         if string.sub(CMDBAR.Text,1,4)==("hoho") then
           loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
         end
-        if string.sub(CMDBAR.Text,1,4)==("brew") then 
-         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
+        if string.sub(CMDBAR.Text,1,4)==("domainx") then 
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source',true))()
         end
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
