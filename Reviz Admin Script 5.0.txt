@@ -159,6 +159,10 @@ function change()
 end
 local Mouse = lplayer:GetMouse()
 Players=game:GetService("Players")
+local WTS = function(Object)
+	local ObjectVector = game.workspace.CurrentCamera:WorldToScreenPoint(Object.Position)
+	return Vector2.new(ObjectVector.X, ObjectVector.Y)
+end
 local MousePositionToVector2 = function()
 	return Vector2.new(Mouse.X, Mouse.Y)
 end
