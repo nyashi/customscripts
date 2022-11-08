@@ -173,7 +173,9 @@ lplayer.CharacterAdded:Connect(function(character)
     staring = false
     banpl = false
 end)
- 
+scroll={}
+shade1={}
+shade2={}
 function change()
     prefix = prefix
     speedfly = speedfly
@@ -671,7 +673,7 @@ CMDBAR.TextScaled = true
 CMDBAR.TextSize = 14
 CMDBAR.TextWrapped = true
 CMDBAR.Text = "Press ; to type, Enter to execute"
- 
+PARENT=ScreenGui
 local CMDS = Instance.new("ScreenGui")
 local CMDSFRAME = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
@@ -3594,7 +3596,55 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         })
         end
         if string.sub(CMDBAR.Text,1,7)==("targets") then
-       reference = (function()
+        targetui()
+        end
+        CMDBAR.Text = ""
+    end
+end)
+ 
+wait(0.3)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Loaded successfully!";
+    Text = "Reviz Admin V2 by illremember";
+})
+wait(0.1)
+print("Reviz Admin V2 loaded!")
+if game:GetService("Workspace").FilteringEnabled == true then
+    warn("FE is Enabled (Filtering Enabled)")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "FE is Enabled";
+        Text = "Filtering Enabled. Enjoy using Reviz Admin!";
+    })
+else
+    warn("FE is Disabled (Filtering Disabled) Consider using a different admin script.")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "FE is Disabled";
+        Text = "Filtering Disabled. Consider using a different admin script.";
+    })
+end
+ 
+local intro = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+intro.Parent = game:GetService("CoreGui")
+Frame.Parent = intro
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BackgroundTransparency = 1
+Frame.Size = UDim2.new(1, 0, 0, 300)
+Frame.Position = UDim2.new(0, 0, -0.4, 0)
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.Position = UDim2.new(0, 0, 0, 0)
+ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=1542162618"
+Frame:TweenPosition(UDim2.new(0, 0, 0.2, 0), "Out", "Elastic", 3)
+wait(3.01)
+Frame:TweenPosition(UDim2.new(0, 0, 1.5, 0), "Out", "Elastic", 5)
+wait(5.01)
+intro:Destroy()
+function targetui()
+reference = (function()
 	local main = create({
 		{1,"Frame",{BackgroundColor3=Color3.new(0.14117647707462,0.14117647707462,0.14509804546833),BackgroundTransparency=1,BorderColor3=Color3.new(0.15686275064945,0.15686275064945,0.15686275064945),BorderSizePixel=0,Name="Main",Position=UDim2.new(0.5,-250,0,-500),Size=UDim2.new(0,500,0,20),ZIndex=10,}},
 		{2,"Frame",{BackgroundColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),BorderSizePixel=0,Name="TopBar",Parent={1},Size=UDim2.new(1,0,0,20),ZIndex=10,}},
@@ -3723,74 +3773,14 @@ CMDBAR.FocusLost:connect(function(enterPressed)
 	table.insert(shade2,main.TopBar)
 	main.Name = randomString()
 	main.TopBar.Close.MouseButton1Click:Connect(function()
-		main:TweenPosition(UDim2.new(0.5,-250,0,-500), "InOut", "Quart", 0.5, true, nil)
+		--main:TweenPosition(UDim2.new(0.5,-250,0,-500), "InOut", "Quart", 0.5, true, nil)
+		main:Destroy()
 	end)
-	local inviteButton = main:FindFirstChild("InviteButton",true)
-	local lastPress = nil
-	inviteButton.MouseButton1Click:Connect(function()
-		local func = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
-		if func then
-			func("https://discord.io/infiniteyield")
-			inviteButton.Text = "Copied"
-		else
-			inviteButton.Text = "No Clipboard Function, type out the link"
-		end
-		local pressTime = tick()
-		lastPress = pressTime
-		wait(2)
-		if lastPress ~= pressTime then return end
-		inviteButton.Text = "Copy Discord Invite Link (https://discord.io/infiniteyield)"
-	end)
+	
 	dragGUI(main)
 	main.Parent = PARENT
 
-	ReferenceButton.MouseButton1Click:Connect(function()
-		main:TweenPosition(UDim2.new(0.5,-250,0.5,-150), "InOut", "Quart", 0.5, true, nil)
-	end)
+	main:TweenPosition(UDim2.new(0.5,-250,0.5,-150), "InOut", "Quart", 0.5, true, nil)
+	
 end)()
-        end
-        CMDBAR.Text = ""
-    end
-end)
- 
-wait(0.3)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Loaded successfully!";
-    Text = "Reviz Admin V2 by illremember";
-})
-wait(0.1)
-print("Reviz Admin V2 loaded!")
-if game:GetService("Workspace").FilteringEnabled == true then
-    warn("FE is Enabled (Filtering Enabled)")
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "FE is Enabled";
-        Text = "Filtering Enabled. Enjoy using Reviz Admin!";
-    })
-else
-    warn("FE is Disabled (Filtering Disabled) Consider using a different admin script.")
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "FE is Disabled";
-        Text = "Filtering Disabled. Consider using a different admin script.";
-    })
 end
- 
-local intro = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local ImageLabel = Instance.new("ImageLabel")
-intro.Parent = game:GetService("CoreGui")
-Frame.Parent = intro
-Frame.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame.BackgroundTransparency = 1
-Frame.Size = UDim2.new(1, 0, 0, 300)
-Frame.Position = UDim2.new(0, 0, -0.4, 0)
-ImageLabel.Parent = Frame
-ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-ImageLabel.BackgroundTransparency = 1
-ImageLabel.Position = UDim2.new(0, 0, 0, 0)
-ImageLabel.Size = UDim2.new(1, 0, 1, 0)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=1542162618"
-Frame:TweenPosition(UDim2.new(0, 0, 0.2, 0), "Out", "Elastic", 3)
-wait(3.01)
-Frame:TweenPosition(UDim2.new(0, 0, 1.5, 0), "Out", "Elastic", 5)
-wait(5.01)
-intro:Destroy()
