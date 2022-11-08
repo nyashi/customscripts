@@ -159,6 +159,14 @@ function change()
 end
 local Mouse = lplayer:GetMouse()
 Players=game:GetService("Players")
+function splitString(str,delim)
+	local broken = {}
+	if delim == nil then delim = "," end
+	for w in string.gmatch(str,"[^"..delim.."]+") do
+		table.insert(broken,w)
+	end
+	return broken
+end
 local WTS = function(Object)
 	local ObjectVector = game.workspace.CurrentCamera:WorldToScreenPoint(Object.Position)
 	return Vector2.new(ObjectVector.X, ObjectVector.Y)
@@ -459,9 +467,9 @@ function GetPlayer(String) -- Credit to Timeless/xFunnieuss
     end
     return Found    
 end
-function GetPlayer(list,speaker)
+function GetPlayer(list)
         speaker=Players.LocalPlayer
-	if list == nil then return {speaker.Name} end
+	if list == nil then return {speaker} end
 	local nameList = splitString(list,",")
 
 	local foundList = {}
