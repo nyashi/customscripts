@@ -181,6 +181,7 @@ function getPlayersByName(Name)
 	end
 	return Found
 end
+
 function GetPlayer(String) -- Credit to Timeless/xFunnieuss
     local Found = {}
     local strl = String:lower()
@@ -209,7 +210,57 @@ function GetPlayer(String) -- Credit to Timeless/xFunnieuss
     end
     return Found    
 end
- 
+function GetPlayer(list,speaker)
+        speaker=Players.LocalPlayer
+	if list == nil then return {speaker.Name} end
+	local nameList = splitString(list,",")
+
+	local foundList = {}
+
+	for _,name in pairs(nameList) do
+		if string.sub(name,1,1) ~= "+" and string.sub(name,1,1) ~= "-" then name = "+"..name end
+		local tokens = toTokens(name)
+		local initialPlayers = Players:GetPlayers()
+
+		for i,v in pairs(tokens) do
+			if v.Operator == "+" then
+				local tokenContent = v.Name
+				local foundCase = false
+				for regex,case in pairs(SpecialPlayerCases) do
+					local matches = {string.match(tokenContent,"^"..regex.."$")}
+					if #matches > 0 then
+						foundCase = true
+						initialPlayers = onlyIncludeInTable(initialPlayers,case(speaker,matches,initialPlayers))
+					end
+				end
+				if not foundCase then
+					initialPlayers = onlyIncludeInTable(initialPlayers,getPlayersByName(tokenContent))
+				end
+			else
+				local tokenContent = v.Name
+				local foundCase = false
+				for regex,case in pairs(SpecialPlayerCases) do
+					local matches = {string.match(tokenContent,"^"..regex.."$")}
+					if #matches > 0 then
+						foundCase = true
+						initialPlayers = removeTableMatches(initialPlayers,case(speaker,matches,initialPlayers))
+					end
+				end
+				if not foundCase then
+					initialPlayers = removeTableMatches(initialPlayers,getPlayersByName(tokenContent))
+				end
+			end
+		end
+
+		for i,v in pairs(initialPlayers) do table.insert(foundList,v) end
+	end
+
+	local foundUsers = {}
+	for i,v in pairs(foundList) do table.insert(foundUsers,v) end
+
+	return foundUsers
+end
+
 local Mouse = lplayer:GetMouse()
  
 spin = false
