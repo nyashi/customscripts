@@ -3174,7 +3174,7 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         loadstring(game:HttpGet('https://pastebin.com/raw/XTcEAqTN'))()
         end
         if string.sub(CMDBAR.Text,1,4)==("dark") then
-        PARENT=ScreenGui
+        _G.PARENT=ScreenGui
         loadstring(game:HttpGet('https://pastebin.com/raw/bSLJLNcP'))()
         game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Success!";
