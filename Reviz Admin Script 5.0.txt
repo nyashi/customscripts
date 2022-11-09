@@ -3590,6 +3590,9 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         if string.sub(CMDBAR.Text,1,5)==("sussy") then
         loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))()
         end
+        if string.sub(CMDBAR.Text,1,5)=("firex") then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/firex/main/firex'))()
+        end
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
 	prefix = ':';
