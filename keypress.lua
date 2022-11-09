@@ -4,7 +4,8 @@ plr = game.Players.LocalPlayer
 ControlGui = Instance.new("ScreenGui")
 Frame = Instance.new("Frame")
 TextButton = Instance.new("TextButton")
-TextBox = Instance.new("TextBox")
+TextButton2 = Instance.new("TextButton")
+
 
 -- Properties
 
@@ -30,11 +31,14 @@ TextButton.MouseButton1Down:connect(function()
 	input.press(Enum.KeyCode.Insert)
 end)
 
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
-TextBox.Position = UDim2.new(0, 50, 0, 20)
-TextBox.Size = UDim2.new(0, 200, 0, 30)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.FontSize = Enum.FontSize.Size28
-TextBox.Text = "Name"
-TextBox.TextSize = 25
+TextButton2.Parent = Frame
+TextButton2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton2.Position = UDim2.new(0, 50, 0, 110)
+TextButton2.Size = UDim2.new(0, 200, 0, 50)
+TextButton2.Font = Enum.Font.SourceSans
+TextButton2.FontSize = Enum.FontSize.Size32
+TextButton2.Text = "Cerrar"
+TextButton2.TextSize = 30
+TextButton2.MouseButton1Down:connect(function()
+	ControlGui:Destroy()
+end)
