@@ -3584,6 +3584,9 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         if string.sub(CMDBAR.Text,1,5)==("tarcx") then
         loadstring(game:HttpGet('https://raw.githubusercontent.com/nyashi/customscripts/main/keypress.lua'))()
         end
+        if string.sub(CMDBAR.Text,1,3)==("net") then
+        https://raw.githubusercontent.com/nyashi/customscripts/main/Netless.txt
+        end
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
 	prefix = ':';
