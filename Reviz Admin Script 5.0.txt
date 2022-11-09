@@ -3590,9 +3590,7 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         if string.sub(CMDBAR.Text,1,5)==("sussy") then
         loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))()
         end
-        if string.sub(CMDBAR.Text,1,5)==("firex") then
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/firex/main/firex'))()
-        end
+        
         if string.sub(CMDBAR.Text,1,5)==("yield") then
           defaultsettings = {
 	prefix = ':';
@@ -3616,20 +3614,16 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
         if string.sub(CMDBAR.Text,1,7)==("warrior") then
         loadstring(game:HttpGet('https://pastebin.com/raw/XTcEAqTN'))()
         end
-        if string.sub(CMDBAR.Text,1,4)==("dark") then
-        _G.PARENT=ScreenGui
-        loadstring(game:HttpGet('https://pastebin.com/raw/bSLJLNcP'))()
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Success!";
-        Text = "Dark DEX Explorer has loaded.";
-        })
-        end
+        
         if string.sub(CMDBAR.Text,1,4)==("rspy") or string.sub(CMDBAR.Text,1,9)==("remotespy") then
         loadstring(game:HttpGet("https://gist.githubusercontent.com/Toon-arch/8f5af8403ca5dabad30763ab2b1cf8d0/raw/87d9847dd85850777e691e46d0c52f9020b42ee2/spy"))()
         game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Success!";
         Text = "Remote Spy has loaded.";
         })
+        end
+        if string.sub(CMDBAR.Text,1,5)==("firex") then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/firex/main/firex'))()
         end
         
         CMDBAR.Text = ""
