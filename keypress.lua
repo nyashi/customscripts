@@ -33,7 +33,7 @@ end)
 
 TextButton2.Parent = Frame
 TextButton2.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton2.Position = UDim2.new(0, 50, 0, 110)
+TextButton2.Position = UDim2.new(0, 50, 0, 20)
 TextButton2.Size = UDim2.new(0, 200, 0, 50)
 TextButton2.Font = Enum.Font.SourceSans
 TextButton2.FontSize = Enum.FontSize.Size32
