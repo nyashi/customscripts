@@ -5,7 +5,7 @@ Frame = Instance.new("Frame")
 TextButton = Instance.new("TextButton")
 TextButton2 = Instance.new("TextButton")
 
-
+TextButton3 = Instance.new("TextButton")
 -- Properties
 
 ControlGui.Name = "ControlGui"
@@ -31,7 +31,19 @@ TextButton.MouseButton1Down:connect(function()
             v.Character.Humanoid.DisplayName = v.DisplayName..' | M: '..v.Stats.Melee.Value
         end
 end)
-
+TextButton3.Parent = Frame
+TextButton3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton3.Position = UDim2.new(0, 50, 0, 160)
+TextButton3.Size = UDim2.new(0, 200, 0, 50)
+TextButton3.Font = Enum.Font.SourceSans
+TextButton3.FontSize = Enum.FontSize.Size32
+TextButton3.Text = "UnView All Stats"
+TextButton3.TextSize = 30
+TextButton3.MouseButton1Down:connect(function()
+	for i,v in pairs(game.Players:GetPlayers()) do
+            v.Character.Humanoid.DisplayName = v.DisplayName
+        end
+end)
 TextButton2.Parent = Frame
 TextButton2.BackgroundColor3 = Color3.new(1, 1, 1)
 TextButton2.Position = UDim2.new(0, 50, 0, 20)
