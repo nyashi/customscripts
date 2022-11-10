@@ -3575,6 +3575,14 @@ CMDBAR.FocusLost:connect(function(enterPressed)
         if string.sub(CMDBAR.Text,1,4)==("hoho") then
           loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
         end
+        if string.sub(CMDBAR.Text,1,4)==("simu") then
+        spawn(function()
+    game.RunService.RenderStepped:Connect(function()
+        game.Players.LocalPlayer.MaximumSimulationRadius = math.huge;
+        setsimulationradius(math.huge);
+    end)
+end)
+        end
         if string.sub(CMDBAR.Text,1,4)==("arcx") then 
          _G.Toggle_GUI = "z"
          while not game:IsLoaded() do
