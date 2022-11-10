@@ -29,6 +29,7 @@ TextButton.TextSize = 30
 TextButton.MouseButton1Down:connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
             v.Character.Humanoid = v.DisplayName..' | M: '..v.Stats.Melee.Value
+        end
 end)
 
 TextButton2.Parent = Frame
