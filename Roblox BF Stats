@@ -28,7 +28,7 @@ TextButton.Text = "View All Stats"
 TextButton.TextSize = 30
 TextButton.MouseButton1Down:connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
-            v.Character.Humanoid.DisplayName = v.DisplayName..' | M: '..v.Stats.Melee.Value
+            v.Character.Humanoid.DisplayName = v.DisplayName..' | M: '..v.Data.Stats.Melee.Value
         end
 end)
 TextButton3.Parent = Frame
