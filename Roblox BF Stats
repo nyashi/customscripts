@@ -44,6 +44,19 @@ TextButton3.MouseButton1Down:connect(function()
             v.Character.Humanoid.DisplayName = v.DisplayName
         end
 end)
+
+TextButton4.Parent = Frame
+TextButton4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton4.Position = UDim2.new(0, 50, 0, 270)
+TextButton4.Size = UDim2.new(0, 200, 0, 50)
+TextButton4.Font = Enum.Font.SourceSans
+TextButton4.FontSize = Enum.FontSize.Size32
+TextButton4.Text = "Set Target Kill"
+TextButton4.TextSize = 30
+TextButton4.MouseButton1Down:connect(function()
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PlayerHunter")
+end)
+
 TextButton2.Parent = Frame
 TextButton2.BackgroundColor3 = Color3.new(1, 1, 1)
 TextButton2.Position = UDim2.new(0, 50, 0, 20)
