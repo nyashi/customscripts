@@ -6,6 +6,7 @@ TextButton = Instance.new("TextButton")
 TextButton2 = Instance.new("TextButton")
 
 TextButton3 = Instance.new("TextButton")
+TextButton4 = Instance.new("TextButton")
 -- Properties
 
 ControlGui.Name = "ControlGui"
@@ -47,7 +48,7 @@ end)
 
 TextButton4.Parent = Frame
 TextButton4.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton4.Position = UDim2.new(0, 50, 0, 270)
+TextButton4.Position = UDim2.new(0, 50, 0, 230)
 TextButton4.Size = UDim2.new(0, 200, 0, 50)
 TextButton4.Font = Enum.Font.SourceSans
 TextButton4.FontSize = Enum.FontSize.Size32
