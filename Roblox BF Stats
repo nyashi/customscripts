@@ -28,7 +28,7 @@ TextButton.Text = "View All Stats"
 TextButton.TextSize = 30
 TextButton.MouseButton1Down:connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
-            v.Character.Humanoid.DisplayName = v.DisplayName..' | M: '..v.Data.Stats.Melee.Level.Value..' | D: '..v.Data.Stats.Defense.Level.Value..' | S: '..v.Data.Stats.Sword.Level.Value..' | G: '..v.Data.Stats.Gun.Level.Value..' | F: '..v.Data.Stats["Demon Fruit"].Level.Value
+            v.Character.Humanoid.DisplayName = v.DisplayName..'['..v.Data.DevilFruit.Value..']('..v.Data.Level.Value..')'..' | M: '..v.Data.Stats.Melee.Level.Value..' | D: '..v.Data.Stats.Defense.Level.Value..' | S: '..v.Data.Stats.Sword.Level.Value..' | G: '..v.Data.Stats.Gun.Level.Value..' | F: '..v.Data.Stats["Demon Fruit"].Level.Value
         end
 end)
 TextButton3.Parent = Frame
