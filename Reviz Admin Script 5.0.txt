@@ -3583,6 +3583,9 @@ CMDBAR.FocusLost:connect(function(enterPressed)
     end)
 end)
         end
+        if string.sub(CMDBAR.Text,1,8)==("backdoor") then
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()
+        end
         if string.sub(CMDBAR.Text,1,4)==("arcx") then 
          _G.Toggle_GUI = "z"
          while not game:IsLoaded() do
