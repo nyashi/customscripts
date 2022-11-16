@@ -3613,7 +3613,7 @@ end)
         loadstring(game:HttpGet("https://pastebin.com/raw/bzmhRgKL"))()
         end
         
-        if string.sub(CMDBAR.Text,1,5)==("yield") then
+        if string.sub(CMDBAR.Text,1,7)==("yieldfix") then
           defaultsettings = {
 	prefix = ':';
 	StayOpen = false;
@@ -3629,6 +3629,8 @@ end)
 defaults = game:GetService("HttpService"):JSONEncode(defaultsettings)
 
 writefile("IY_FE.iy",defaults)
+        end
+        if string.sub(CMDBAR.Text,1,5)==("yield") then
 
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
