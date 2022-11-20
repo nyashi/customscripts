@@ -3621,6 +3621,7 @@ end)
         Text = "Infinite Yield aún no está cargado ";
         })
         end
+        end
         if string.sub(CMDBAR.Text,1,7)==("yieldfix") then
           defaultsettings = {
 	prefix = ':';
